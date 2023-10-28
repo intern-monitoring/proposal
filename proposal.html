@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proposal Proyek 3 | Bursa Kerja</title>
+    <link rel="icon" href="favicon.ico" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    x-data="{ page: 'blog-grid', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'b eh': darkMode === true}"
+  >
+    <!-- ===== Header Start ===== -->
+    <header
+      class="g s r vd ya cj"
+      :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+      @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+    >
+      <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+        <div class="vd to/4 tc wf yf">
+          <a href="index.html">
+            <h1 class="text-2xl text-blue-600 font-bold">Intern Monitoring</h1>
+          </a>
+
+          <!-- Hamburger Toggle BTN -->
+          <button class="po rc" @click="navigationOpen = !navigationOpen">
+            <span class="rc i pf re pd">
+              <span class="du-block h q vd yc">
+                <span
+                  class="rc i r s eh um tg te rd eb ml jl dl"
+                  :class="{ 'ue el': !navigationOpen }"
+                ></span>
+                <span
+                  class="rc i r s eh um tg te rd eb ml jl fl"
+                  :class="{ 'ue qr': !navigationOpen }"
+                ></span>
+                <span
+                  class="rc i r s eh um tg te rd eb ml jl gl"
+                  :class="{ 'ue hl': !navigationOpen }"
+                ></span>
+              </span>
+              <span class="du-block h q vd yc lf">
+                <span
+                  class="rc eh um tg ml jl el h na r ve yc"
+                  :class="{ 'sd dl': !navigationOpen }"
+                ></span>
+                <span
+                  class="rc eh um tg ml jl qr h s pa vd rd"
+                  :class="{ 'sd rr': !navigationOpen }"
+                ></span>
+              </span>
+            </span>
+          </button>
+          <!-- Hamburger Toggle BTN -->
+        </div>
+
+        <div
+          class="vd wo/4 sd qo f ho oo wf yf"
+          :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+        >
+          <nav></nav>
+          <div class="tc wf ig no justify-center">
+            <a
+              href="index.html"
+              :class="{ '' : page === 'home', 'ok' : page === 'home' && stickyMenu }"
+              class="ek pk xl text-blue-500"
+              >Home</a
+            >
+            <a
+              href="#"
+              :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }"
+              class="lk gh dk rg tc wf xf _l gi hi"
+              >Proposal</a
+            >
+            <a
+              href="team.html"
+              :class="{ '' : page === 'home', 'ok' : page === 'home' && stickyMenu }"
+              class="ek pk xl text-blue-500"
+              >Team</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Header End ===== -->
+
+    <!-- Content -->
+
+    <section
+      class="pt-[120px] flex items-center min-h-20 justify-center bg-white animate-fade"
+    >
+      <div class="mx-auto max-w-[43rem]">
+        <div class="text-center mb-6">
+          <p class="text-lg font-medium leading-8 text-blue-500" id="title"></p>
+          <h1
+            class="mt-3 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-gray-800"
+            id="judulproyek"
+          ></h1>
+          <p
+            class="mt-3 text-sm leading-relaxed text-slate-400"
+            id="anggota1"
+          ></p>
+          <p
+            class="mt-3 text-sm leading-relaxed text-slate-400"
+            id="anggota2"
+          ></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- component -->
+    <section class="bg-white">
+      <div class="container px-6 py-10 mx-auto">
+        <div class="lg:flex lg:items-center">
+          <div class="w-full space-y-7 animate-fade-right">
+            <details class="group">
+              <summary
+                class="flex justify-between items-center font-medium cursor-pointer list-none"
+              >
+                <h1
+                  class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl"
+                >
+                  Latar Belakang
+                  <div>
+                    <span
+                      class="inline-block w-40 h-1 rounded-full bg-blue-500"
+                    ></span>
+                    <span
+                      class="inline-block w-3 h-1 ml-1 rounded-full bg-blue-500"
+                    ></span>
+                    <span
+                      class="inline-block w-1 h-1 ml-1 rounded-full bg-blue-500"
+                    ></span>
+                  </div>
+                </h1>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div
+                class="text-neutral-600 mt-3 group-open:animate-fadeIn"
+                id="latarbelakang"
+              ></div>
+            </details>
+            <hr />
+            <details class="group">
+              <summary
+                class="flex justify-between items-center font-medium cursor-pointer list-none"
+              >
+                <h1
+                  class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl"
+                >
+                  Desikripsi Aplikasi
+                  <div>
+                    <span
+                      class="inline-block w-40 h-1 rounded-full bg-blue-500"
+                    ></span>
+                    <span
+                      class="inline-block w-3 h-1 ml-1 rounded-full bg-blue-500"
+                    ></span>
+                    <span
+                      class="inline-block w-1 h-1 ml-1 rounded-full bg-blue-500"
+                    ></span>
+                  </div>
+                </h1>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div
+                class="text-justify text-neutral-600 mt-3 group-open:animate-fadeIn"
+                id="deskripsiaplikasi"
+              ></div>
+            </details>
+            <hr />
+            <details class="group">
+              <summary
+                class="flex justify-between items-center font-medium cursor-pointer list-none"
+              >
+                <h1
+                  class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl"
+                >
+                  Tujuan
+                  <div>
+                    <span
+                      class="inline-block w-40 h-1 rounded-full bg-blue-500"
+                    ></span>
+                    <span
+                      class="inline-block w-3 h-1 ml-1 rounded-full bg-blue-500"
+                    ></span>
+                    <span
+                      class="inline-block w-1 h-1 ml-1 rounded-full bg-blue-500"
+                    ></span>
+                  </div>
+                </h1>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div
+                class="text-neutral-600 mt-3 group-open:animate-fadeIn"
+                id="tujuan"
+              ></div>
+            </details>
+            <hr />
+            <details class="group">
+              <summary
+                class="flex justify-between items-center font-medium cursor-pointer list-none"
+              >
+                <h1
+                  class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl"
+                >
+                  Kesimpulan
+                  <div>
+                    <span
+                      class="inline-block w-40 h-1 rounded-full bg-blue-500"
+                    ></span>
+                    <span
+                      class="inline-block w-3 h-1 ml-1 rounded-full bg-blue-500"
+                    ></span>
+                    <span
+                      class="inline-block w-1 h-1 ml-1 rounded-full bg-blue-500"
+                    ></span>
+                  </div>
+                </h1>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div
+                class="text-justify text-neutral-600 mt-3 group-open:animate-fadeIn"
+                id="kesimpulan"
+              ></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer Start ===== -->
+    <footer class="mt-14">
+      <div class="bb ze ki xn 2xl:ud-px-0">
+        <!-- Footer  -->
+        <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+          <div class="animate_top">
+            <ul class="tc wf gg">
+              <li><a href="#" class="xl">Indonesia</a></li>
+              <li><a href="#" class="xl">Privacy Policy</a></li>
+              <li><a href="#" class="xl">Support</a></li>
+            </ul>
+          </div>
+
+          <div class="animate_top">
+            <p>&copy; 2023 Bursa Kerja. All rights reserved</p>
+          </div>
+        </div>
+        <!-- Footer  -->
+      </div>
+    </footer>
+
+    <!-- ===== Footer End ===== -->
+
+    <!-- ====== Back To Top Start ===== -->
+    <button
+      class="xc wf xf ie ld vg sr gh tr g sa ta _a"
+      @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+      @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false"
+      :class="{ 'uc' : scrollTop }"
+    >
+      <svg
+        class="uh se qd"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"
+        />
+      </svg>
+    </button>
+
+    <!-- ====== Back To Top End ===== -->
+    <script defer src="bundle.js"></script>
+    <script type="module" src="js/proposal.js"></script>
+  </body>
+</html>
